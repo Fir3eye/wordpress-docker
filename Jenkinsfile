@@ -9,7 +9,7 @@ pipeline{
         }
         stage("Checkout SCM"){
             steps {
-                git 'https://github.com/Fir3eye/wordpress-docker.git'
+                git branch: 'main', credentialsId: 'github', url: 'https://github.com/Fir3eye/wordpress-docker.git'
             }
         }
         stage("Build Docker Image"){
